@@ -8,13 +8,10 @@ namespace Dotnet9Test
         {
 
             Console.WriteLine(IsValidName("Sarvar"));
-            Console.WriteLine(IsValidEmail("934548544"));
+            Console.WriteLine(IsValidNumber("934548544"));
+            Console.WriteLine(IsValidEmail("sarvargamer8544@gmail.com "));
 
-            string pattern = @"^([A-Z]{1}[a-z]+)$";
-
-            Regex reg = new Regex(pattern);
-
-            Console.WriteLine(reg.IsMatch("Ali"));
+          
             
         }  
         
@@ -25,7 +22,7 @@ namespace Dotnet9Test
             return Regex.IsMatch(name, pattern);
         }
 
-        static bool IsValidEmail(string email)
+        static bool IsValidNumber(string email)
         {
             string pattern = "(^[0-9]{9}$)|(^[0-9]{2}-[0-9]{3}-[0-9]{2}$)";
 
@@ -33,6 +30,12 @@ namespace Dotnet9Test
            
         }
 
+        static bool IsValidEmail(string email)
+        {
+            string pattern = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
+
+            return Regex.IsMatch(email, pattern);
+        }
         
     }
 }
