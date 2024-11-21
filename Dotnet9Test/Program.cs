@@ -36,6 +36,9 @@ namespace Dotnet9Test
 
             return Regex.IsMatch(email, pattern);
         }
-        
+        static void Add()
+        {
+            Console.WriteLine("Added two numbers");
+        }
     }
 }
